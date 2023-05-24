@@ -4,7 +4,7 @@
     "description": "backend news",
     "main": "index.js",
     "scripts": {
-        "start": "babel-node src/index.js",
+        "start": "node index.js",
         "dev": "nodemon --exec babel-node src/index.js"
     },
     "keywords": [
