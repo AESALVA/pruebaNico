@@ -5,9 +5,14 @@ import newsRoute from "./routes/news.routes";
 import userRoute from "./routes/user.routes";
 import "./database";
 import * as dotenv from "dotenv";
+import mongoose from "mongoose";
+
 
 dotenv.config();
-
+mongoose.connect(process.env.URI, {
+    useNewUrlParser : true,
+    useUnifiedTopology : true,
+  }).then(()=>{console.log('database connection OK')}).catch((error)=>{console.error(error)});
 //instanciar express y configurar el puerto:
 const app = express();
 app.set("port", process.env.PORT || 4000);
